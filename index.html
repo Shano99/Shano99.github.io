@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Graph Visualization</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="load.js"></script>
+  <script src="network.js"></script>
+
+
+
+  <div class="w3-content" style="margin-left: 0px; ">
+
+    <!-- Header -->
+    <header class="w3-panel w3-center w3-opacity">
+
+      <div class="w3-padding-4">
+        <div class="w3-bar w3-border">
+          <!-- <a href="#" data-network="DD-Miner_fdl" class="w3-bar-item w3-button w3-light-grey">DD-FDL</a> -->
+          <a href="#" data-network="DD-Miner_embed" class=" w3-bar-item w3-button w3-light-grey" id="DD-Miner_embed">DD-Miner</a>
+          <!-- <a href="#" data-network="FF-Miner_fdl" class="w3-bar-item w3-button w3-light-grey">FF-FDL</a> -->
+          <a href="#" data-network="FF-Miner_embed" class=" w3-bar-item w3-button w3-light-grey" id="FF-Miner_embed">FF-Miner</a>
+          <!-- <a href="#" data-network="ChCh-Miner_fdl" class="w3-bar-item w3-button w3-light-grey">ChCh-FDL</a> -->
+          <a href="#" data-network="ChCh-Miner_embed" class="w3-bar-item w3-button w3-light-grey" id="ChCh-Miner_embed">ChCh-Miner</a>
+          
+          <button id="rotateButton">
+            Rotate
+          </button>
+          <button id="labelButton">
+            Show Labels
+          </button>
+          <!-- Community Filter Dropdown -->
+          <div class="community-selector">
+            <select id="communityFilter" class="w3-select w3-light-grey w3-center" >
+              <option value="All Communities">Communities</option>
+              
+            </select>
+          </div>
+          <div class="search-container ">
+            <input type="text" id="nodeSearch" placeholder="Search for a node..." />
+            <div id="searchResults" class="search-results"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </header>
+    <div id="loadingScreen" class="loader-div">
+      <span class="loader">
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+
+  </div>
+  <div class="canvas-graph">
+    <!-- Canvas will be injected here -->
+    <p id="placeholder-message" class="w3-center w3-padding-16 w3-text-grey">Click a graph above to visualize!</p>
+   
+  </div>
+
+
+  <div class="tooltip">
+
+  </div>
+</body>
+
+</html>
